@@ -1,0 +1,109 @@
+* {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    nav {
+      border-bottom: 1px solid black;
+      background-color: #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2 {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .menuButton {
+      width: 35px;
+      height: 30px;
+      margin-right: 15px;
+      cursor: pointer;
+      display: none;
+      position: relative;
+      z-index: 20;
+      margin-top: 10px;
+    }
+
+    .menubar {
+      height: 2px;
+      width: 20px;
+      background-color: black;
+      margin-top: 2px;
+      margin-right: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    li {
+      display: inline-block;
+      padding-left: 50px;
+    }
+
+    li:last-child {
+      padding-right: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    @media (max-width: 750px) {
+      .menuButton {
+        display: block;
+      }
+      ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #eee;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        margin: 0;
+        padding: 0;
+        transition: left 0.4s ease;
+      }
+      /* li {
+        padding: 20px;
+        border-bottom: 1px solid black;
+      }
+      a:hover, a:focus {
+        display: inline-block;
+        background-color: black;
+        color: white;
+      } */
+      li a{
+        padding: 20px;
+        display: block;
+      }
+      li{
+        padding: 0;
+        border-bottom: 1px solid black;
+      }
+      li a:hover, li a:focus {
+        background-color: black;
+        color: white;
+      }
+      ul.open {
+        left: 0;
+      }
+      .menuButton.open .menubar:nth-child(1) {
+        transform: translateY(4px) rotate(45deg);
+      }
+      .menuButton.open .menubar:nth-child(2) {
+        opacity: 0;
+      }
+      .menuButton.open .menubar:nth-child(3) {
+        transform: translateY(-4px) rotate(-45deg);
+      }
+    }
